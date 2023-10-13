@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .survey_form{
+            width: 50%;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 5px;
+            font-size: 30px;
+        }
+        label {
+            display: block;
+        }
+        input[type="text"],input[type="email"]{
+            width: 80%;
+            padding: 12px 20px;
+            /* margin: 8px 0; */
+        }
+        button{
+            background-color: rgb(71, 94, 228);
+            color: white;
+        }
+        .outer{
+            background-color: rgb(71, 94, 228) ;
+        }
+    </style>
+    <script>
+        onsubmit = () =>{
+            
+            alert("Thank you for your response");
+
+        }
+        onreset = () =>{
+            alert("Your form has been reset")
+
+        }
+        // $(document).ready(function() {
+        //     $("#submitBtn").click(function() {
+        //         let selectedValues = [];
+        //         $("input:checked").each(function() {
+        //             selectedValues.push($(this).val());
+        //         });
+        //         if (selectedValues.length > 0) {
+        //             $("#selectedValuesList").html("");
+        //             selectedValues.forEach(function(value) {
+        //                 $("#selectedValuesList").append("<li>" + value + "</li>");
+        //             });
+
+        //             $("#popup").show();
+        //         } else{
+
+        //         }
+            
+        // })});
+    </script>
+</head>
+<body>
+    <section class="outer">
+        <!--        Survey form-->
+        <h1>Survey Form</h1>
+        <div class="survey_form">
+            <form action="submit" method="post">
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="first_name" required><br><br>
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="last_name" required><br> <br>
+                <label for="`dob">Date of Birth: </label>
+                <input type="date" id="dob" name="date_of_birth" required> <br><br>
+                <label for="country">Country: </label>
+                <select id="country" name="country" required> 
+                    <option value="">Select Country:</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="australia">Australia</option>
+                </select> <br> <br>
+                <fieldset>
+                    <!--                    Gender radio buttons-->
+                    <legend required>Gender:</legend>
+                    <!--                    Male Radio button-->
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <!--                    Male label -->
+                    <label for="male">Male</label><br>
+                    <!--                    Female Radio button-->
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <!--                    Female Label-->
+                    <label for="female">Female</label><br>
+                    <!--                    Other Radio Button-->
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <!--                   Other Label-->
+                    <label for="other">Other</label><br>
+                </fieldset><br>
+                
+                               <!-- Date Picker
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+                "></script> -->
+                <label for="profession">Profession: </label>
+                <input type="text" id="profession" name="profession"><br> <br>
+                <label for="email">email: </label>
+                <input type="email" id="email" name="email" required><br> <br>
+                <label for="mobile">Mobile Number: </label>
+                <input type="tel" maxlength="10" minlength="10" required title="Enter a valid 10 digit mobile number."/> <br><br>
+                <button type="submit" onclick="{onsubmit}">Submit</button>
+                <button type="reset" onclick="{onreset}">Reset</button>
+                <!-- <input type="reset" value="Reset" />
+	            <input type="submit" value="Submit" /> -->
+            </form>
+        </div>
+    </section>
+</body>
+</html>
